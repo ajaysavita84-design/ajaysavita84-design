@@ -1,5 +1,8 @@
 name: Tourism MLOps Pipeline
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -13,6 +16,8 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
